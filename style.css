@@ -548,7 +548,7 @@ body {
 
 @media (max-width: 1024px) {
     .hero-container {
-        flex-direction: column;
+        flex-direction: column-reverse;
         text-align: center;
         padding: 0 32px;
     }
@@ -5553,5 +5553,43 @@ section {
         flex-direction: column;
         text-align: center;
         gap: 15px;
+    }
+}
+/* ===== Mobile Floating Buy Button ===== */
+.mobile-floating-buy {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--purple-gradient);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+    z-index: 9999;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-floating-buy.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mobile-floating-buy:active {
+    transform: translateY(2px) scale(0.98);
+}
+
+@media (min-width: 769px) {
+    .mobile-floating-buy {
+        display: none !important;
     }
 }

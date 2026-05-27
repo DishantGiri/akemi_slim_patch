@@ -154,3 +154,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+// Floating Buy Button Visibility
+document.addEventListener('DOMContentLoaded', () => {
+    const floatingBuyBtn = document.getElementById('mobile-floating-buy');
+    const heroSection = document.getElementById('hero');
+
+    if (floatingBuyBtn && heroSection) {
+        window.addEventListener('scroll', () => {
+            const heroBottom = heroSection.getBoundingClientRect().bottom;
+            // Show button when the user scrolls past the hero section
+            if (heroBottom < 100) {
+                floatingBuyBtn.classList.add('visible');
+            } else {
+                floatingBuyBtn.classList.remove('visible');
+            }
+        });
+    }
+});
